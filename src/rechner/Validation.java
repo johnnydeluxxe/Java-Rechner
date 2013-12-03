@@ -22,6 +22,7 @@ public class Validation {
 		}catch(NumberFormatException s){
 			fertig = Double.MIN_VALUE;
 			return fertig;
+			//Hier bla
 		}
 		
 		
