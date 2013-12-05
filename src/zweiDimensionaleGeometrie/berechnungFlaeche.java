@@ -50,9 +50,12 @@ public class berechnungFlaeche {
 		
 		flaechenInhalt = seiteA * seiteB;
 		
-		System.out.println("Der Fl�cheninhalt des Rechtecks betr�gt: " + flaechenInhalt);
+		System.out.println("Der Flächeninhalt des Rechtecks beträgt: " + flaechenInhalt);
 		
 	}
+	
+	
+	
 	
 	public double berechneDreieckFlaeche(double g, double h){
 		//double grundflaeche;
