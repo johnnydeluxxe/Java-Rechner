@@ -4,6 +4,8 @@ import zweiDimensionaleGeometrie.*;
 
 import java.util.Scanner;
 
+import dreiDimensionaleGeometrie.BerechnungVolumen;
+
 public class TestRechner {
 
 	/**
@@ -13,10 +15,10 @@ public class TestRechner {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
-		
+		double ergebnisRechteckFlaeche = Integer.MIN_VALUE;
 		while(run == true){
 			System.out.println("Was möchten Sie Rechnen?\n..............\n1: Flächeninhalt Kreis berechnen\n2: Umfang Berechnen\n3: Flächeninhalt Rechteck berechnen"
-					+ "\n4: Flächeninhalt Dreieck berechnen\n5: Mitternachtsformel\n6: Close");
+					+ "\n4: Flächeninhalt Dreieck berechnen\n5: Volumen Rechteck\n6: Mitternachtsformel\n7: Close");
 	    	int eingabe = scanner.nextInt();
 			switch(eingabe){
 				case 1:
@@ -26,22 +28,21 @@ public class TestRechner {
 					berechnungUmfang.umfangBerechnung();
 					break;
 				case 3:
-					berechnungFlaeche.berechneRechteckFlaeche();
+					ergebnisRechteckFlaeche = berechnungFlaeche.berechneRechteckFlaeche();
+					System.out.println("Der Flächeninhalt des Rechtecks beträgt: " + ergebnisRechteckFlaeche);
 					break;
 				case 4:
-					//Scanner scanner = new Scanner(System.in);
-					System.out.println("Wie groß ist die Grundfläche?: ");
-					double grundflaeche = scanner.nextInt();
-					System.out.println("Wie groß ist die Höhe?: ");
-					double hoehe = scanner.nextInt();
-					berechnungFlaeche berechnen = new berechnungFlaeche();
-					double ergebnis = berechnen.berechneDreieckFlaeche(grundflaeche, hoehe);
+					double ergebnis = berechnungFlaeche.berechneDreieckFlaeche();
 					System.out.println("Der Flächeninhalt des Dreiecks beträgt: " + ergebnis);
 					break;
 				case 5:
-					Formel.mitternachtsformel();
+					double ergebnisVolumen = BerechnungVolumen.berechneDreieckVolumen(ergebnisRechteckFlaeche);
+					System.out.println("Das Volumen beträgt: " + ergebnisVolumen + "\n\n");
 					break;
 				case 6:
+					Formel.mitternachtsformel();
+					break;
+				case 7:
 					System.out.println("Bye");
 					run=false;
 					break;

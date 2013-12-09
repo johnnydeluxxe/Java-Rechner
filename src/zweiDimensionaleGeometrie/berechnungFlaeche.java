@@ -6,14 +6,14 @@ public class berechnungFlaeche {
 		
 	public static void berechneKreisFlaeche(){
 		double flaechenInhalt = 0;
-		double pi = 3.14159;
+		//double pi = 3.14159;
 		double eingabeRadius = 0;
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Wie gross ist der Radius: ");
 		eingabeRadius = scanner.nextDouble();
 		
-		flaechenInhalt = pi*(eingabeRadius*eingabeRadius);
+		flaechenInhalt = java.lang.Math.PI *(eingabeRadius*eingabeRadius);
 		
 		System.out.println("Der Flächeninhalt beträgt: " + flaechenInhalt);
 		
@@ -27,9 +27,9 @@ public class berechnungFlaeche {
 			runden=false;
 		}
 		
-		if (runden == true){
+		if (runden){
 			System.out.println("Auf welche Stelle nach dem Komma möchten Sie Runden? (Ganze Zahl): ");
-			int zahlRound = scanner.nextInt();
+			//int zahlRound = scanner.nextInt();
 			// Code um Zahl auf stelle "zahlRound" zu runden!!!!!!
 		}else{
 			System.out.println("Das Ergebnis beleibt: " + flaechenInhalt);
@@ -37,7 +37,7 @@ public class berechnungFlaeche {
 		}	
 	}
 	
-	public static void berechneRechteckFlaeche(){
+	public static double berechneRechteckFlaeche(){
 		double flaechenInhalt = 0;
 		double seiteA = 0;
 		double seiteB = 0;
@@ -50,16 +50,21 @@ public class berechnungFlaeche {
 		
 		flaechenInhalt = seiteA * seiteB;
 		
-		System.out.println("Der Flächeninhalt des Rechtecks beträgt: " + flaechenInhalt);
 		
+		
+		return flaechenInhalt;
 	}
 	
 	
 	
 	
-	public double berechneDreieckFlaeche(double g, double h){
-		//double grundflaeche;
-		//double hoehe = 0;
+	public static double berechneDreieckFlaeche(){
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Wie groß ist die Grundfläche?: ");
+		double g = scanner.nextDouble();
+		System.out.println("Wie groß ist die Höhe?: ");
+		double h = scanner.nextInt();
+		
 		double flaecheDreieck = 0;
 		
 		flaecheDreieck = 0.5 * g * h;
