@@ -15,7 +15,7 @@ public class TestRechner {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
-		double ergebnisRechteckFlaeche = Integer.MIN_VALUE;
+		double ergebnisRechteckFlaeche = Double.MIN_VALUE;
 		while(run == true){
 			System.out.println("Was möchten Sie Rechnen?\n..............\n1: Flächeninhalt Kreis berechnen\n2: Umfang Berechnen\n3: Flächeninhalt Rechteck berechnen"
 					+ "\n4: Flächeninhalt Dreieck berechnen\n5: Volumen Rechteck\n6: Mitternachtsformel\n7: Close");
